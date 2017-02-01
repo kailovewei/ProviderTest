@@ -21,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
 
         addData= (Button) findViewById(R.id.add_data);
         queryData= (Button) findViewById(R.id.query_data);
@@ -33,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
         addData.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Uri uri=Uri.parse("content://ykk.sqlite.com.sqlite.provider/book");
+                Uri uri= Uri.parse("content://ykk.sqlite.com.sqlite.provider/book");
                 ContentValues values=new ContentValues();
                 values.put("name","A Clash of King");
                 values.put("author","George Martin");
@@ -43,6 +44,7 @@ public class MainActivity extends AppCompatActivity {
                 newId=newUri.getPathSegments().get(1);
             }
         });
+
         //查询数据
         queryData.setOnClickListener(new View.OnClickListener() {
             @Override
